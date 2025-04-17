@@ -12,7 +12,8 @@ html, body {
     --screen-left: 8.6%;
     --screen-width: 64%;
     --screen-height: 70.5%;
-    position: absolute;
+    position: relative;
+    z-index: 0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -22,7 +23,6 @@ html, body {
     height: calc(100vw / (394 / 291));
     max-height: 100vh;
   }
-  
   
   .crt-border {
     position: absolute;
@@ -48,11 +48,11 @@ html, body {
     justify-content: center;
     text-align: center;
 
-    color: black;
+    color: rgb(0, 255, 0);
     text-shadow:
-      0 0 1px grey,
-      0 0 3px grey,
-      0 0 5px black;
+      0 0 1px rgb(30, 150, 0),
+      0 0 3px rgb(30, 150, 0),
+      0 0 5px rgb(10, 60, 0);
     font-family: 'Courier New', monospace;    
   }
   
@@ -66,16 +66,16 @@ html, body {
     pointer-events: none;
   
     background:
-      radial-gradient(circle at center, rgba(255, 255, 255, 0), rgba(20, 20, 20, 0.9));
-      /*linear-gradient(to bottom right, rgba(255,255,255,0.03), transparent 70%),
-      repeating-linear-gradient(rgba(0, 0, 0, 0.025), rgba(0, 0, 0, 0.025) 1px, transparent 1px, transparent 2px);*/
-    /*
-    border-radius: 8% / 6%;
-    box-shadow: inset 0 0 40px rgba(0, 255, 128, 0.1);*/
+      radial-gradient(circle at center, rgba(255, 255, 255, 0), rgba(50, 50, 50, 0.9)),
+      linear-gradient(to bottom right, rgba(255,255,255,0.3), transparent 50%),
+      repeating-linear-gradient(rgba(0, 0, 0, 0.025), rgba(0, 0, 0, 0.025) 0.5%, transparent 0.5%, transparent 1%);
+    
+    border-radius: 25% / 10%;
+    box-shadow: inset 0 0 40px rgb(255, 255, 255, 0.5);
   }
   
   .crt-vsync {
-    --bar-height: 12%;
+    --bar-height: 15%;
     /*border: 2px dashed red;*/
     position: absolute;
     top: var(--screen-top);
@@ -93,14 +93,14 @@ html, body {
       rgba(0, 0, 0, 0.12) var(--bar-height)
     );
   
-    animation: vsyncScroll 1s linear infinite;
-    opacity: 0.1;
+    animation: vsyncScroll 0.7s linear infinite;
+    opacity: 0.2;
   }
   
   @keyframes vsyncScroll {
     0% {
       /* Set this equal to bar-height */
-      transform: translateY(-12%);
+      transform: translateY(-15%);
     }
     100% {
       transform: translateY(0%);

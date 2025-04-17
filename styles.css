@@ -8,6 +8,10 @@ html, body {
   }
   
   .crt-wrapper {
+    --screen-top: 11%;
+    --screen-left: 8.6%;
+    --screen-width: 64%;
+    --screen-height: 70.5%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -33,10 +37,10 @@ html, body {
     z-index: 1;
   
     /* These values overfilled slightly for no gaps */
-    top: 11%;
-    left: 8.6%;
-    width: 64%;
-    height: 70.5%;
+    top: var(--screen-top);
+    left: var(--screen-left);
+    width: var(--screen-width);
+    height: var(--screen-height);
   
     background: white;
     display: flex;
@@ -54,46 +58,49 @@ html, body {
   
   .crt-screen {
     position: absolute;
-    top: 11%;
-    left: 8.6%;
-    width: 64%;
-    height: 70.5%;
+    top: var(--screen-top);
+    left: var(--screen-left);
+    width: var(--screen-width);
+    height: var(--screen-height);
     z-index: 3;
     pointer-events: none;
   
     background:
-      radial-gradient(circle at center, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.12)),
-      linear-gradient(to bottom right, rgba(255,255,255,0.03), transparent 70%),
-      repeating-linear-gradient(rgba(0, 0, 0, 0.025), rgba(0, 0, 0, 0.025) 1px, transparent 1px, transparent 2px);
-
+      radial-gradient(circle at center, rgba(255, 255, 255, 0), rgba(20, 20, 20, 0.9));
+      /*linear-gradient(to bottom right, rgba(255,255,255,0.03), transparent 70%),
+      repeating-linear-gradient(rgba(0, 0, 0, 0.025), rgba(0, 0, 0, 0.025) 1px, transparent 1px, transparent 2px);*/
+    /*
     border-radius: 8% / 6%;
-    box-shadow: inset 0 0 40px rgba(0, 255, 128, 0.1);
+    box-shadow: inset 0 0 40px rgba(0, 255, 128, 0.1);*/
   }
   
   .crt-vsync {
+    --bar-height: 12%;
+    /*border: 2px dashed red;*/
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200%;
+    top: var(--screen-top);
+    left: var(--screen-left);
+    width: var(--screen-width);
+    height: calc(var(--screen-height) + var(--bar-height));
     z-index: 2; /* between screen overlay and border */
     pointer-events: none;
   
     background: repeating-linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0) 0px,
-      rgba(0, 0, 0, 0) 5px,
-      rgba(129, 88, 88, 0.12) 5px,
-      rgba(0, 0, 0, 0.12) 10px
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) calc(var(--bar-height) / 2),
+      rgba(129, 88, 88, 0.12) calc(var(--bar-height) / 2),
+      rgba(0, 0, 0, 0.12) var(--bar-height)
     );
   
-    animation: vsyncScroll 2s linear infinite;
-    opacity: 1;
+    animation: vsyncScroll 1s linear infinite;
+    opacity: 0.1;
   }
   
   @keyframes vsyncScroll {
     0% {
-      transform: translateY(-50%);
+      /* Set this equal to bar-height */
+      transform: translateY(-12%);
     }
     100% {
       transform: translateY(0%);

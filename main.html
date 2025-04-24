@@ -10,34 +10,39 @@
 <body>
     <div class="crt-wrapper">
         <div class="crt-content">
-            <div class="channel-selector">
-                <button class="channel-toggle">🔽 Switch Channel</button>
-                <ul class="channel-menu">
-                  <li data-channel="welcome">📺 Welcome</li>
-                  <li data-channel="about">👤 About Me</li>
-                  <li data-channel="qualifications">📜 Qualifications</li>
-                </ul>
-              </div>
+            <!-- Channel Switch Button -->
+            <button class="channel-button">Menu</button>
+
+            <!-- Fullscreen Menu Overlay -->
+            <div class="channel-menu hidden">
+              <h2>Change Channel</h2>
+              <ul>
+                <li data-channel="welcome">📺 Welcome</li>
+                <li data-channel="about">👤 About Me</li>
+                <li data-channel="qualifications">📜 Qualifications</li>
+              </ul>
+            </div>
+
               
-              <div class="channel-screen channel-welcome active">
-                <h1>Welcome to My Portfolio</h1>
-                <p>Thanks for tuning in. Scroll down to learn more about me!</p>
-                <p>Use the switcher to change channels anytime.</p>
-              </div>
+            <div class="channel-screen channel-welcome active">
+              <h1>Welcome to My Portfolio</h1>
+              <p>Thanks for tuning in. Scroll down to learn more about me!</p>
+              <p>Use the switcher to change channels anytime.</p>
+            </div>
               
-              <div class="channel-screen channel-about">
-                <h1>About Me</h1>
-                <p>I’m a front-end developer with a passion for design, animation, and building rich user experiences.</p>
-              </div>
+            <div class="channel-screen channel-about">
+              <h1>About Me</h1>
+              <p>I'm a front-end developer with a passion for design, animation, and building rich user experiences.</p>
+            </div>
               
-              <div class="channel-screen channel-qualifications">
-                <h1>Qualifications</h1>
-                <ul>
-                  <li>✔️ 15+ years of experience in front-end development</li>
-                  <li>✔️ Mastery of JavaScript, React, and UI/UX design</li>
-                  <li>✔️ Proven track record building complex apps from concept to launch</li>
-                </ul>
-              </div>
+            <div class="channel-screen channel-qualifications">
+              <h1>Qualifications</h1>
+              <ul>
+                <li>✔️ 15+ years of experience in front-end development</li>
+                <li>✔️ Mastery of JavaScript, React, and UI/UX design</li>
+                <li>✔️ Proven track record building complex apps from concept to launch</li>
+              </ul>
+            </div>
         </div>
         <div class="crt-vsync"></div>
         <div class="crt-screen"></div>

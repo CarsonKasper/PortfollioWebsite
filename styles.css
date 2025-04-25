@@ -130,7 +130,9 @@ html, body {
     background: blue;
     color: white;
     z-index: 9;
-    display: flex;
+    display: none;
+    overflow-y: auto;
+    max-height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
